@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jhonatan Dev Design System</title>
+    <meta
+      name="description"
+      content="Design system visual para a marca Jhonatan Dev: cores, tipografia, componentes, logo e tokens CSS."
+    >
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="topbar" aria-label="Navegacao principal">
+      <a class="brand-link" href="#topo" aria-label="Ir para o inicio">
+        <img src="./assets/images/logo-wordmark.png" alt="Jhonatan Dev" class="brand-wordmark">
+        <span>Design System</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Secoes do design system">
+        <a href="#cores">Cores</a>
+        <a href="#tipografia">Tipografia</a>
+        <a href="#logo">Logo</a>
+        <a href="#componentes">Componentes</a>
+        <a href="#tokens">Tokens</a>
+      </nav>
+
+      <label class="theme-switch" title="Alternar tema claro e escuro">
+        <input id="themeToggle" type="checkbox" aria-label="Alternar tema claro e escuro">
+        <span aria-hidden="true"></span>
+      </label>
+    </header>
+
+    <main id="topo">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true"></div>
+        <div class="hero-content">
+          <img src="./assets/images/logo-wordmark.png" alt="Jhonatan Dev" class="hero-logo">
+          <p class="eyebrow">Identidade visual tecnica, dark e orientada a conversao</p>
+          <h1 id="hero-title">Jhonatan Dev Design System</h1>
+          <p class="hero-copy">
+            Guia visual baseado no site de referencia, na logo atual e na direcao tipografica
+            Astromax, Centurion e Montserrat.
+          </p>
+          <div class="hero-actions" aria-label="Acoes principais">
+            <a class="button button-primary" href="#cores">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5-9-5Zm-7 9 7 4 7-4v4l-7 5-7-5v-4Z"/></svg>
+              Ver hierarquia
+            </a>
+            <a class="button button-ghost" href="#tokens">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 16-4-4 4-4 1.4 1.4L6.8 12l2.6 2.6L8 16Zm8 0-1.4-1.4 2.6-2.6-2.6-2.6L16 8l4 4-4 4Zm-5.5 2 3-12h2l-3 12h-2Z"/></svg>
+              Copiar tokens
+            </a>
+          </div>
+        </div>
+        <div class="token-strip" aria-label="Cores principais">
+          <span style="--swatch:#000000">Base</span>
+          <span style="--swatch:#0c0c0c">Surface</span>
+          <span style="--swatch:#f6faff">Text</span>
+          <span style="--swatch:#e60000">Red</span>
+          <span style="--swatch:#06def3">Cyan</span>
+          <span style="--swatch:#09c4ff">Blue</span>
+        </div>
+      </section>
+
+      <section class="section analysis" aria-labelledby="analise-title">
+        <div class="section-heading">
+          <p class="eyebrow">Sintese do site atual</p>
+          <h2 id="analise-title">O que foi extraido como padrao visual</h2>
+        </div>
+        <div class="analysis-grid">
+          <article>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h18v4H3V3Zm2 6h14v12H5V9Zm2 2v8h10v-8H7Z"/></svg>
+            <h3>Base escura</h3>
+            <p>Preto quase absoluto com superficies em camadas: #000000, #0C0C0C, #111111 e #202020.</p>
+          </article>
+          <article>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 20h3l1.5-4h7L17 20h3L12 2Zm-2.4 11L12 7l2.4 6H9.6Z"/></svg>
+            <h3>Contraste alto</h3>
+            <p>Texto frio #F6FAFF e cinzas claros para leitura sobre fundos densos e cards de vidro.</p>
+          </article>
+          <article>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v2H5V3Zm0 4h10v2H5V7Zm0 4h14v2H5v-2Zm0 4h10v2H5v-2Zm0 4h14v2H5v-2Z"/></svg>
+            <h3>Energia nos acentos</h3>
+            <p>Vermelho para CTA e enfase principal; ciano/azul para hover, highlights e leitura tecnologica.</p>
+          </article>
+          <article>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v3H4V4Zm2 5h12v11H6V9Zm2 2v7h8v-7H8Z"/></svg>
+            <h3>Movimento controlado</h3>
+            <p>Rim light, linhas animadas, blur de header, cards ativos e microinteracoes de 200 a 500ms.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="cores" class="section" aria-labelledby="cores-title">
+        <div class="section-heading">
+          <p class="eyebrow">Hierarquia cromatica</p>
+          <h2 id="cores-title">Paleta de cores</h2>
+          <p>
+            Use os neutros como sistema principal. O vermelho guia decisao e urgencia; o ciano/azul
+            cria assinatura tech, hover e luz de recorte.
+          </p>
+        </div>
+
+        <div class="palette-layout">
+          <article class="palette-panel primary-panel">
+            <h3>Core tokens</h3>
+            <div class="color-stack">
+              <div class="color-row large" style="--chip:#000000">
+                <span></span>
+                <div><strong>Blackout</strong><code>#000000</code><small>Fundo principal, hero e secoes imersivas.</small></div>
+              </div>
+              <div class="color-row" style="--chip:#0c0c0c">
+                <span></span>
+                <div><strong>Carbon</strong><code>#0C0C0C</code><small>Cards, paineis e blocos de conteudo.</small></div>
+              </div>
+              <div class="color-row" style="--chip:#111111">
+                <span></span>
+                <div><strong>Graphite</strong><code>#111111</code><small>Estados inativos e superficies secundarias.</small></div>
+              </div>
+              <div class="color-row" style="--chip:#f6faff">
+                <span></span>
+                <div><strong>Ice Text</strong><code>#F6FAFF</code><small>Titulos e alto contraste.</small></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="palette-panel">
+            <h3>Acentos</h3>
+            <div class="swatch-grid">
+              <div class="swatch" style="--chip:#e60000"><span></span><strong>Signal Red</strong><code>#E60000</code><small>CTA, headline, risco e alerta.</small></div>
+              <div class="swatch" style="--chip:#800808"><span></span><strong>Deep Red</strong><code>#800808</code><small>Gradiente primario e profundidade.</small></div>
+              <div class="swatch" style="--chip:#06def3"><span></span><strong>Neon Cyan</strong><code>#06DEF3</code><small>Hover, icones ativos, rim light.</small></div>
+              <div class="swatch" style="--chip:#09c4ff"><span></span><strong>Tech Blue</strong><code>#09C4FF</code><small>Gradiente mobile e feedback.</small></div>
+              <div class="swatch" style="--chip:#0b66b4"><span></span><strong>Deep Blue</strong><code>#0B66B4</code><small>Dados, links e apoio institucional.</small></div>
+              <div class="swatch" style="--chip:#43ce9d"><span></span><strong>Conversion Green</strong><code>#43CE9D</code><small>Sucesso, prova e leitura positiva.</small></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="gradient-grid">
+          <div class="gradient-card red-gradient">
+            <strong>CTA primary</strong>
+            <code>linear-gradient(135deg, #E60000 0%, #800808 100%)</code>
+          </div>
+          <div class="gradient-card cyan-gradient">
+            <strong>Tech hover</strong>
+            <code>linear-gradient(135deg, #06DEF3 0%, #09C4FF 100%)</code>
+          </div>
+          <div class="gradient-card data-gradient">
+            <strong>Data emphasis</strong>
+            <code>linear-gradient(90deg, #0B66B4 0%, #43CE9D 100%)</code>
+          </div>
+        </div>
+
+        <div class="theme-spec">
+          <article class="theme-preview dark-preview">
+            <h3>Tema escuro</h3>
+            <p>Padrao principal para site, propostas comerciais, landing pages e conteudo tech.</p>
+            <div class="mini-ui">
+              <span>Performance</span>
+              <strong>Pagina que converte</strong>
+              <button>Orcamento</button>
+            </div>
+          </article>
+          <article class="theme-preview light-preview">
+            <h3>Tema claro</h3>
+            <p>Use para documentos densos, dashboards internos e propostas que exigem leitura longa.</p>
+            <div class="mini-ui">
+              <span>Analise</span>
+              <strong>Design com metodo</strong>
+              <button>Ver plano</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="tipografia" class="section" aria-labelledby="tipo-title">
+        <div class="section-heading">
+          <p class="eyebrow">Sistema tipografico</p>
+          <h2 id="tipo-title">Astromax, Centurion e Montserrat</h2>
+          <p>
+            A direcao combina display futurista, assinatura visual e leitura pragmatica. Evite usar
+            fontes decorativas em blocos longos.
+          </p>
+        </div>
+
+        <div class="type-grid">
+          <article class="type-card type-display">
+            <span>Display</span>
+            <h3>Astromax</h3>
+            <p class="specimen astromax">FUTURO COM ESTRUTURA</p>
+            <small>Use em hero, capas, titulos curtos, numerais grandes e chamadas de impacto.</small>
+          </article>
+          <article class="type-card type-signature">
+            <span>Assinatura</span>
+            <h3>Centurion</h3>
+            <p class="specimen centurion">Presenca e Resultado</p>
+            <small>Use como contraste editorial em frases curtas, selos, aberturas e detalhes de marca.</small>
+          </article>
+          <article class="type-card type-body">
+            <span>Texto e UI</span>
+            <h3>Montserrat</h3>
+            <p class="specimen montserrat">Cada pagina e construida com design, copy e performance para guiar a acao.</p>
+            <small>Use em paragrafos, navegacao, botoes, formularios, cards e documentos.</small>
+          </article>
+        </div>
+
+        <div class="scale-table" role="table" aria-label="Escala tipografica recomendada">
+          <div role="row">
+            <span role="cell">Hero display</span>
+            <strong role="cell">96px / 1.00</strong>
+            <code role="cell">Astromax</code>
+          </div>
+          <div role="row">
+            <span role="cell">H1</span>
+            <strong role="cell">64px / 1.05</strong>
+            <code role="cell">Astromax ou Montserrat 800</code>
+          </div>
+          <div role="row">
+            <span role="cell">H2</span>
+            <strong role="cell">42px / 1.12</strong>
+            <code role="cell">Montserrat 700</code>
+          </div>
+          <div role="row">
+            <span role="cell">H3</span>
+            <strong role="cell">28px / 1.18</strong>
+            <code role="cell">Montserrat 700</code>
+          </div>
+          <div role="row">
+            <span role="cell">Body</span>
+            <strong role="cell">16px / 1.65</strong>
+            <code role="cell">Montserrat 400</code>
+          </div>
+          <div role="row">
+            <span role="cell">Micro</span>
+            <strong role="cell">12px / 1.35</strong>
+            <code role="cell">Montserrat 600</code>
+          </div>
+        </div>
+      </section>
+
+      <section id="logo" class="section" aria-labelledby="logo-title">
+        <div class="section-heading">
+          <p class="eyebrow">Marca</p>
+          <h2 id="logo-title">Uso da logo</h2>
+          <p>
+            O simbolo tem estrutura tridimensional e pede respiro. A versao com nome usa wordmark
+            branca, portanto deve viver em fundo escuro ou sobre uma faixa escura.
+          </p>
+        </div>
+
+        <div class="logo-grid">
+          <article class="logo-stage dark-stage">
+            <img src="./assets/images/logo-wordmark.png" alt="Logo Jhonatan Dev com nome">
+            <span>Uso preferencial: fundo escuro</span>
+          </article>
+          <article class="logo-stage light-stage">
+            <img src="./assets/images/logo-symbol.png" alt="Simbolo Jhonatan Dev">
+            <span>Uso claro: simbolo isolado ou wordmark sobre base escura</span>
+          </article>
+          <article class="logo-stage compact-stage">
+            <img src="./assets/images/logo-smush.png" alt="Simbolo compacto Jhonatan Dev">
+            <span>Favicons, avatares, capas pequenas e selos</span>
+          </article>
+        </div>
+
+        <div class="rules-grid">
+          <div><strong>Area de respiro</strong><p>Use no minimo a largura da haste vermelha do simbolo ao redor da marca.</p></div>
+          <div><strong>Tamanho minimo</strong><p>Wordmark: 180px de largura. Simbolo isolado: 32px em interfaces.</p></div>
+          <div><strong>Evitar</strong><p>Nao usar a wordmark branca sobre fundo claro, nem aplicar sombras coloridas no simbolo.</p></div>
+          <div><strong>Preferir</strong><p>Fundo preto, cinza-carbono ou imagem escura com overlay linear.</p></div>
+        </div>
+      </section>
+
+      <section id="componentes" class="section" aria-labelledby="componentes-title">
+        <div class="section-heading">
+          <p class="eyebrow">Sistema de interface</p>
+          <h2 id="componentes-title">Componentes e estados</h2>
+          <p>Elementos com cantos contidos, bordas finas, glow funcional e transicoes perceptiveis.</p>
+        </div>
+
+        <div class="component-layout">
+          <article class="component-panel">
+            <h3>Botoes</h3>
+            <div class="button-row">
+              <button class="button button-primary">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5v6h6v2h-6v6h-2v-6H5v-2h6V5h2Z"/></svg>
+                Orcamento
+              </button>
+              <button class="button button-cyan">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h12.2l-5.6-5.6L12 5l8 8-8 8-1.4-1.4 5.6-5.6H4v-2Z"/></svg>
+                Ver projeto
+              </button>
+              <button class="button button-ghost">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 15h-2v-6h2v6Zm0-8h-2V7h2v2Z"/></svg>
+                Detalhes
+              </button>
+            </div>
+          </article>
+
+          <article class="component-panel">
+            <h3>Cards de conteudo</h3>
+            <div class="sample-cards">
+              <div class="sample-card active">
+                <span class="card-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13h4v8H3v-8Zm7-10h4v18h-4V3Zm7 6h4v12h-4V9Z"/></svg>
+                </span>
+                <strong>Design com funcao</strong>
+                <p>Layout pensado para conduzir olhar, mensagem e clique.</p>
+              </div>
+              <div class="sample-card inactive">
+                <span class="card-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5Zm0 12L2 9v8l10 5 10-5V9l-10 5Z"/></svg>
+                </span>
+                <strong>Estrutura validada</strong>
+                <p>Cards inativos podem perder glow, mas nao legibilidade.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="component-panel">
+            <h3>Formulario</h3>
+            <form class="sample-form">
+              <label>
+                Nome do projeto
+                <input type="text" value="Landing page institucional" aria-label="Nome do projeto">
+              </label>
+              <label>
+                Prioridade
+                <select aria-label="Prioridade">
+                  <option>Conversao</option>
+                  <option>Autoridade</option>
+                  <option>Velocidade</option>
+                </select>
+              </label>
+            </form>
+          </article>
+
+          <article class="component-panel">
+            <h3>Highlights</h3>
+            <p class="headline-demo">Presenca, <span>percepcao</span> e performance.</p>
+            <div class="scanline" aria-hidden="true"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section motion-section" aria-labelledby="motion-title">
+        <div class="section-heading">
+          <p class="eyebrow">Efeitos</p>
+          <h2 id="motion-title">Rim light, vidro e linhas tecnicas</h2>
+          <p>Use efeitos para orientar foco, nao para preencher espaco vazio.</p>
+        </div>
+        <div class="motion-grid">
+          <div class="motion-card rim">
+            <span></span>
+            <strong>Rim light ciano</strong>
+            <p>Borda/halo em item ativo, hover ou chamada secundaria.</p>
+          </div>
+          <div class="motion-card glass">
+            <span></span>
+            <strong>Glass carbon</strong>
+            <p>Header fixo, barras e paineis sobre imagem escura.</p>
+          </div>
+          <div class="motion-card trace">
+            <span></span>
+            <strong>Linha animada</strong>
+            <p>Separadores, progresso e direcao visual em secoes longas.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="aplicacoes-title">
+        <div class="section-heading">
+          <p class="eyebrow">Aplicacoes</p>
+          <h2 id="aplicacoes-title">Como a identidade aparece em telas reais</h2>
+          <p>O padrao favorece fundos escuros, imagens com luz azul/vermelha e blocos de alto contraste.</p>
+        </div>
+        <div class="reference-grid">
+          <figure>
+            <img src="./assets/images/brand-hero.jpg" alt="Hero visual do site Jhonatan Dev">
+            <figcaption>Hero pessoal com rim light vermelho e ambiente tecnico azul.</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/images/reference-layout.png" alt="Exemplo de layout do site de referencia">
+            <figcaption>Blocos de problema com composicao escura e destaque pontual.</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/images/reference-lp-subtracao.jpg" alt="Exemplo de landing page vertical">
+            <figcaption>Projetos de landing page em mockup vertical para prova visual.</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/images/reference-lp-bizarria.jpg" alt="Exemplo de landing page vertical">
+            <figcaption>Vitrine de entregas com contraste e profundidade.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="tokens" class="section tokens-section" aria-labelledby="tokens-title">
+        <div class="section-heading">
+          <p class="eyebrow">Implementacao</p>
+          <h2 id="tokens-title">Tokens CSS base</h2>
+          <p>Este bloco resume o sistema para reutilizar em sites, propostas, landing pages e dashboards.</p>
+        </div>
+
+        <div class="code-shell">
+          <button id="copyTokens" class="copy-button" type="button" title="Copiar tokens CSS">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4v14h2V3h10V1Zm-8 4h12v18H8V5Zm2 2v14h8V7h-8Z"/></svg>
+          </button>
+          <pre><code id="tokenCode">:root {
+  --brand-bg: #000000;
+  --brand-surface: #0c0c0c;
+  --brand-surface-2: #111111;
+  --brand-surface-3: #202020;
+  --brand-border: rgba(255, 255, 255, 0.12);
+  --brand-border-muted: rgba(48, 48, 48, 0.37);
+
+  --brand-text: #f6faff;
+  --brand-text-muted: #c5c5c5;
+  --brand-text-soft: #808185;
+
+  --brand-red: #e60000;
+  --brand-red-deep: #800808;
+  --brand-cyan: #06def3;
+  --brand-blue: #09c4ff;
+  --brand-blue-deep: #0b66b4;
+  --brand-green: #43ce9d;
+
+  --gradient-cta: linear-gradient(135deg, #e60000 0%, #800808 100%);
+  --gradient-tech: linear-gradient(135deg, #06def3 0%, #09c4ff 100%);
+  --gradient-data: linear-gradient(90deg, #0b66b4 0%, #43ce9d 100%);
+
+  --font-display: "Astromax", "Montserrat", sans-serif;
+  --font-signature: "Centurion", "Montserrat", sans-serif;
+  --font-body: "Montserrat", "Segoe UI", sans-serif;
+
+  --radius-sm: 5px;
+  --radius-md: 8px;
+  --shadow-cyan: 0 0 54px rgba(6, 222, 243, 0.34);
+  --shadow-red: 0 17px 34px rgba(230, 0, 0, 0.24);
+}</code></pre>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <img src="./assets/images/logo-wordmark.png" alt="Jhonatan Dev">
+      <p>Design system local baseado no site de referencia e nos assets da identidade visual.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
