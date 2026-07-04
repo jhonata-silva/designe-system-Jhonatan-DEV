@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap");
 
 @font-face {
   font-family: "Astromax";
@@ -39,9 +39,15 @@
   --gradient-cta: linear-gradient(135deg, #e60000 0%, #800808 100%);
   --gradient-tech: linear-gradient(135deg, #06def3 0%, #09c4ff 100%);
   --gradient-data: linear-gradient(90deg, #0b66b4 0%, #43ce9d 100%);
+  --section-glow-size: 300px;
+  --section-glow-blur: 200px;
+  --section-glow-dark: rgba(230, 0, 0, 0.34);
+  --section-glow-white: rgba(230, 0, 0, 0.16);
+  --section-glow-card: rgba(230, 0, 0, 0.28);
   --font-display: "Astromax", "Montserrat", "Segoe UI", sans-serif;
   --font-outline: "Astromax Outline", "Astromax", "Montserrat", sans-serif;
   --font-signature: "Centurion", "Montserrat", "Segoe UI", sans-serif;
+  --font-heading: "Inter", "Montserrat", "Segoe UI", sans-serif;
   --font-body: "Montserrat", "Segoe UI", sans-serif;
   --radius-sm: 5px;
   --radius-md: 8px;
@@ -70,20 +76,40 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
+  position: relative;
+  isolation: isolate;
   margin: 0;
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
-    var(--brand-bg);
-  background-size: 56px 56px, 56px 56px, auto;
+  overflow-x: clip;
+  background: var(--brand-bg);
   color: var(--brand-text);
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.65;
   letter-spacing: 0;
+}
+
+body::before {
+  position: fixed;
+  top: 8%;
+  left: 18%;
+  z-index: 0;
+  width: var(--section-glow-size);
+  height: var(--section-glow-size);
+  border-radius: 100%;
+  background: var(--section-glow-dark);
+  content: "";
+  filter: blur(var(--section-glow-blur));
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 body::selection {
@@ -281,10 +307,10 @@ button {
 .eyebrow {
   margin: 0 0 14px;
   color: var(--brand-cyan);
-  font-size: 12px;
-  font-weight: 800;
+  font-size: 16px;
+  font-weight: 600;
   line-height: 1.3;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 h1,
@@ -428,16 +454,17 @@ h1 {
 
 .section-heading h2 {
   margin-bottom: 16px;
-  font-family: var(--font-body);
-  font-size: 42px;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.12;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0;
 }
 
 .section-heading p:not(.eyebrow) {
   color: var(--brand-text-muted);
-  font-size: 17px;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .analysis-grid,
@@ -701,6 +728,13 @@ small {
   font-size: 46px;
   line-height: 1.08;
   color: var(--brand-red);
+}
+
+.inter {
+  font-family: var(--font-heading);
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.12;
 }
 
 .montserrat {

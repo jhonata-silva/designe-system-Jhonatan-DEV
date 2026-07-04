@@ -36,11 +36,11 @@
         <div class="hero-media" aria-hidden="true"></div>
         <div class="hero-content">
           <img src="./assets/images/logo-wordmark.png" alt="Jhonatan Dev" class="hero-logo">
-          <p class="eyebrow">Identidade visual tecnica, dark e orientada a conversao</p>
+          <p class="eyebrow">Identidade Visual Técnica, Dark E Orientada A Conversão</p>
           <h1 id="hero-title">Jhonatan Dev Design System</h1>
           <p class="hero-copy">
             Guia visual baseado no site de referencia, na logo atual e na direcao tipografica
-            Astromax, Centurion e Montserrat.
+            Astromax, Centurion, Inter e Montserrat.
           </p>
           <div class="hero-actions" aria-label="Acoes principais">
             <a class="button button-primary" href="#cores">
@@ -65,7 +65,7 @@
 
       <section class="section analysis" aria-labelledby="analise-title">
         <div class="section-heading">
-          <p class="eyebrow">Sintese do site atual</p>
+          <p class="eyebrow">Síntese Do Site Atual</p>
           <h2 id="analise-title">O que foi extraido como padrao visual</h2>
         </div>
         <div class="analysis-grid">
@@ -94,7 +94,7 @@
 
       <section id="cores" class="section" aria-labelledby="cores-title">
         <div class="section-heading">
-          <p class="eyebrow">Hierarquia cromatica</p>
+          <p class="eyebrow">Hierarquia Cromática</p>
           <h2 id="cores-title">Paleta de cores</h2>
           <p>
             Use os neutros como sistema principal. O vermelho guia decisao e urgencia; o ciano/azul
@@ -177,8 +177,8 @@
 
       <section id="tipografia" class="section" aria-labelledby="tipo-title">
         <div class="section-heading">
-          <p class="eyebrow">Sistema tipografico</p>
-          <h2 id="tipo-title">Astromax, Centurion e Montserrat</h2>
+          <p class="eyebrow">Sistema Tipográfico</p>
+          <h2 id="tipo-title">Astromax, Centurion, Inter e Montserrat</h2>
           <p>
             A direcao combina display futurista, assinatura visual e leitura pragmatica. Evite usar
             fontes decorativas em blocos longos.
@@ -197,6 +197,12 @@
             <h3>Centurion</h3>
             <p class="specimen centurion">Presenca e Resultado</p>
             <small>Use como contraste editorial em frases curtas, selos, aberturas e detalhes de marca.</small>
+          </article>
+          <article class="type-card type-heading">
+            <span>Heading</span>
+            <h3>Inter</h3>
+            <p class="specimen inter">Operacao comercial clara</p>
+            <small>Use em H2, H3 de servico, subtitulos de secao e blocos institucionais.</small>
           </article>
           <article class="type-card type-body">
             <span>Texto e UI</span>
@@ -219,8 +225,8 @@
           </div>
           <div role="row">
             <span role="cell">H2</span>
-            <strong role="cell">42px / 1.12</strong>
-            <code role="cell">Montserrat 700</code>
+            <strong role="cell">max 48px / 1.08</strong>
+            <code role="cell">Inter 600</code>
           </div>
           <div role="row">
             <span role="cell">H3</span>
@@ -275,7 +281,7 @@
 
       <section id="componentes" class="section" aria-labelledby="componentes-title">
         <div class="section-heading">
-          <p class="eyebrow">Sistema de interface</p>
+          <p class="eyebrow">Sistema De Interface</p>
           <h2 id="componentes-title">Componentes e estados</h2>
           <p>Elementos com cantos contidos, bordas finas, glow funcional e transicoes perceptiveis.</p>
         </div>
@@ -372,7 +378,7 @@
 
       <section class="section" aria-labelledby="aplicacoes-title">
         <div class="section-heading">
-          <p class="eyebrow">Aplicacoes</p>
+          <p class="eyebrow">Aplicações</p>
           <h2 id="aplicacoes-title">Como a identidade aparece em telas reais</h2>
           <p>O padrao favorece fundos escuros, imagens com luz azul/vermelha e blocos de alto contraste.</p>
         </div>
@@ -398,7 +404,7 @@
 
       <section id="tokens" class="section tokens-section" aria-labelledby="tokens-title">
         <div class="section-heading">
-          <p class="eyebrow">Implementacao</p>
+          <p class="eyebrow">Implementação</p>
           <h2 id="tokens-title">Tokens CSS base</h2>
           <p>Este bloco resume o sistema para reutilizar em sites, propostas, landing pages e dashboards.</p>
         </div>
@@ -429,9 +435,15 @@
   --gradient-cta: linear-gradient(135deg, #e60000 0%, #800808 100%);
   --gradient-tech: linear-gradient(135deg, #06def3 0%, #09c4ff 100%);
   --gradient-data: linear-gradient(90deg, #0b66b4 0%, #43ce9d 100%);
+  --section-glow-size: 300px;
+  --section-glow-blur: 200px;
+  --section-glow-dark: rgba(230, 0, 0, 0.34);
+  --section-glow-white: rgba(230, 0, 0, 0.16);
+  --section-glow-card: rgba(230, 0, 0, 0.28);
 
   --font-display: "Astromax", "Montserrat", sans-serif;
   --font-signature: "Centurion", "Montserrat", sans-serif;
+  --font-heading: "Inter", "Montserrat", "Segoe UI", sans-serif;
   --font-body: "Montserrat", "Segoe UI", sans-serif;
 
   --radius-sm: 5px;
